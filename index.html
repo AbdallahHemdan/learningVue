@@ -8,27 +8,44 @@
   <body>
     <div id="root">
       <h1>Learning Vue.JS</h1>
-      <p>{{getAge}}</p>
-      <p>{{getAge}}</p>
-      <p>{{reverseMessage}}</p>
-      <p>{{reverseMessage}}</p>
-      <p>{{reverseMessage}}</p>
+      <h2>My full name : {{getFullName}}</h2>
+      <label>Search for programming languages :</label>
+      <input type="text" v-model="findLanguage" />
+      <ul>
+        <li v-for="lang in filterLanguages">{{lang}}</li>
+      </ul>
     </div>
     <script src="./js/vue.js"></script>
     <script>
       let vm = new Vue({
         el: "#root",
-        data: { age: 21, message: "My name is Abdallah Ahmed Hemdan" },
+        data: {
+          fName: "Abdallah",
+          lName: "Ahmed",
+          age: 21,
+          message: "Instabug ISA",
+          findLanguage: "",
+          languages: [
+            "HTML",
+            "CSS",
+            "SASS",
+            "JS",
+            "C++",
+            "C",
+            "PYTHON",
+            "REACT",
+            "JAVA",
+          ],
+        },
         methods: {},
         components: {},
         computed: {
-          getAge: function () {
-            console.log("getAge");
-            return this.age * 2;
+          getFullName: function () {
+            return `${this.fName} ${this.lName}`;
           },
-          reverseMessage: function () {
-            console.log("reverseMessage");
-            return this.message.split("").reverse().join("");
+          filterLanguages: function () {
+            let filtering = new RegExp(this.findLanguage, "i");
+            return this.languages.filter((el) => el.match(filtering));
           },
         },
       });
