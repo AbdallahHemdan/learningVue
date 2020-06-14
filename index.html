@@ -6,15 +6,16 @@
     <title>Vue.JS</title>
   </head>
   <body>
-    <div id="app">
-      <h1>{{message}}</h1>
+    <div id="root">
+      <h1>Hello, {{name}}</h1>
+      <h1>Hello, {{name.length > 10 ? name : 'Robot'}}</h1>
     </div>
     <script src="./js/vue.js"></script>
     <script>
-      new Vue({
-        el: "#app",
+      let vm = new Vue({
+        el: "#root",
         data: {
-          message: "Hello-Hemdan",
+          name: "Hemdan",
         },
       });
     </script>
