@@ -7,9 +7,13 @@
   </head>
   <body>
     <div id="root">
+      <!-- v-bind === : -->
       <h1 v-once style="color: red;">{{name}}</h1>
-      <h1 v-show="name.length">Using v-show</h1>
-      <h1 v-if="name.length">Using v-if</h1>
+      <a v-bind:href="imgUrl">
+        <img :src="imgSrc" :alt="altText" />
+      </a>
+      <p>Current Counter : {{counter}}</p>
+      <button @click="IncrementCounter()">Counter</button>
     </div>
     <script src="./js/vue.js"></script>
     <script>
@@ -17,6 +21,15 @@
         el: "#root",
         data: {
           name: "Instafolio",
+          imgSrc: "./images/1.jpg",
+          altText: "flat art",
+          imgUrl: "https://github.com/AbdallahHemdan",
+          counter: 0,
+        },
+        methods: {
+          IncrementCounter: function () {
+            this.counter++;
+          },
         },
       });
     </script>
