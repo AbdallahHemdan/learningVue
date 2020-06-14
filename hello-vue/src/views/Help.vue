@@ -15,4 +15,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped lang="scss">
+.help-container {
+  padding-top: 50px;
+}
+</style>

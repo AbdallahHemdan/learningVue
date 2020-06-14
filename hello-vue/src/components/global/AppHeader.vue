@@ -1,14 +1,13 @@
 <template>
   <div class="app-header">
-    <div class="logo">
-      <h1 class="hemdan">Abdallah Hemdan</h1>
-    </div>
-    <ul id="nav">
+    <h1 class="logo">Hemdan</h1>
+    <ul>
       <router-link to="/" tag="li" exact><a>Home</a></router-link>
-      |
       <router-link to="/about" tag="li"><a>About</a></router-link>
-      |
       <router-link to="/help" tag="li" replace><a>Help</a></router-link>
+      <router-link to="/contactus" tag="li" replace
+        ><a>contact us</a></router-link
+      >
     </ul>
   </div>
 </template>
@@ -19,11 +18,30 @@ export default {
 };
 </script>
 
-<style scoped>
-.hemdan {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 70px;
-  margin-bottom: 0px;
-  color: #41b883;
+<style scoped lang="scss">
+.app-header {
+  background-color: #333;
+  color: #fff;
+  overflow: hidden;
+  .logo {
+    font-size: 20px;
+    padding: 20px;
+    float: left;
+    width: 200px;
+  }
+  ul {
+    float: right;
+    width: calc(100% - 200px);
+    padding-right: 20px;
+    li {
+      padding: 20px;
+      display: inline-block;
+      font-size: 18px;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
 }
 </style>
