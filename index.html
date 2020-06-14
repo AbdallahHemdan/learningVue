@@ -8,44 +8,30 @@
   <body>
     <div id="root">
       <h1>Learning Vue.JS</h1>
-      <h2>My full name : {{getFullName}}</h2>
-      <label>Search for programming languages :</label>
-      <input type="text" v-model="findLanguage" />
-      <ul>
-        <li v-for="lang in filterLanguages">{{lang}}</li>
-      </ul>
+      <label>Username</label>
+      <input type="text" v-model="username" />
+      <p style="color: red;">{{validateUsername}}</p>
     </div>
     <script src="./js/vue.js"></script>
     <script>
       let vm = new Vue({
         el: "#root",
         data: {
-          fName: "Abdallah",
-          lName: "Ahmed",
-          age: 21,
-          message: "Instabug ISA",
-          findLanguage: "",
-          languages: [
-            "HTML",
-            "CSS",
-            "SASS",
-            "JS",
-            "C++",
-            "C",
-            "PYTHON",
-            "REACT",
-            "JAVA",
-          ],
+          username: "",
         },
         methods: {},
         components: {},
         computed: {
-          getFullName: function () {
-            return `${this.fName} ${this.lName}`;
-          },
-          filterLanguages: function () {
-            let filtering = new RegExp(this.findLanguage, "i");
-            return this.languages.filter((el) => el.match(filtering));
+          validateUsername: function () {
+            if (!this.username.length) {
+              return `username cannot be empty`;
+            } else if (this.username.length < 8) {
+              return `username cannot be less than 8`;
+            } else if (!isNaN(this.username)) {
+              return `username cannot be numbers only`;
+            } else {
+              return `Hello, ${this.username}..`;
+            }
           },
         },
       });
