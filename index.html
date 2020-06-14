@@ -8,30 +8,30 @@
   <body>
     <div id="root">
       <h1>Learning Vue.JS</h1>
-      <label>Username</label>
-      <input type="text" v-model="username" />
-      <p style="color: red;">{{validateUsername}}</p>
+      <label>Eg</label>
+      <input type="text" v-model="eg" />
+      <label>SR</label>
+      <input type="text" v-model="sr" />
     </div>
     <script src="./js/vue.js"></script>
     <script>
       let vm = new Vue({
         el: "#root",
         data: {
-          username: "",
+          eg: 0,
+          sr: 0,
         },
         methods: {},
         components: {},
-        computed: {
-          validateUsername: function () {
-            if (!this.username.length) {
-              return `username cannot be empty`;
-            } else if (this.username.length < 8) {
-              return `username cannot be less than 8`;
-            } else if (!isNaN(this.username)) {
-              return `username cannot be numbers only`;
-            } else {
-              return `Hello, ${this.username}..`;
-            }
+        computed: {},
+        watch: {
+          eg: function (value) {
+            console.log("eg");
+            this.sr = value / 5;
+          },
+          sr: function (value) {
+            console.log("sr");
+            this.eg = value * 5;
           },
         },
       });
