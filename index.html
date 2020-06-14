@@ -9,11 +9,34 @@
     <div id="root">
       <!-- v-bind === : -->
       <h1 v-once style="color: red;">{{name}}</h1>
-      <a v-bind:href="imgUrl">
-        <img :src="imgSrc" :alt="altText" />
-      </a>
-      <p>Current Counter : {{counter}}</p>
-      <button @click="IncrementCounter()">Counter</button>
+      <form action="">
+        <label>using v-bind make one-way binding</label>
+        <input type="text" :value="message" />
+        <br /><br />
+        <label>using v-model make two-way binding</label>
+        <input type="text" v-model="message" />
+        <p>Your message {{message}}</p>
+        <br /><br />
+        <input type="checkbox" v-model="checked" />
+        <br />
+        <p>Check value is {{checked}}</p>
+        <br />
+        <br />
+        <br />
+        <input
+          type="checkbox"
+          id="jack"
+          value="hemdan"
+          v-model="checkedNames"
+        />
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="ahmed" v-model="checkedNames" />
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="omar" v-model="checkedNames" />
+        <label for="mike">Mike</label>
+        <br />
+        <span>Checked names: {{ checkedNames }}</span>
+      </form>
     </div>
     <script src="./js/vue.js"></script>
     <script>
@@ -21,16 +44,11 @@
         el: "#root",
         data: {
           name: "Instafolio",
-          imgSrc: "./images/1.jpg",
-          altText: "flat art",
-          imgUrl: "https://github.com/AbdallahHemdan",
-          counter: 0,
+          message: "this is my message",
+          checked: false,
+          checkedNames: [],
         },
-        methods: {
-          IncrementCounter: function () {
-            this.counter++;
-          },
-        },
+        methods: {},
       });
     </script>
   </body>
