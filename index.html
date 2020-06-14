@@ -7,18 +7,16 @@
   </head>
   <body>
     <div id="root">
-      <h1>Learning Vue.JS</h1>
-      <h2 v-if="name.length">Welcome, {{name}}</h2>
-      <h2 v-else-if="age > 18">You are adult</h2>
-      <h2 v-else>No name, I'm mr.robot</h2>
+      <h1 v-once style="color: red;">{{name}}</h1>
+      <h1 v-show="name.length">Using v-show</h1>
+      <h1 v-if="name.length">Using v-if</h1>
     </div>
     <script src="./js/vue.js"></script>
     <script>
       let vm = new Vue({
         el: "#root",
         data: {
-          name: "Abdallah Hemdan",
-          age: 21,
+          name: "Instafolio",
         },
       });
     </script>
