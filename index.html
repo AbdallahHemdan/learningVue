@@ -7,8 +7,11 @@
   </head>
   <body>
     <div id="root">
-      <h1>Hello, {{name}}</h1>
-      <h1>Hello, {{name.length > 10 ? name : 'Robot'}}</h1>
+      <h1>Your name is {{name}}</h1>
+      <h1>Your name is {{age}}</h1>
+      <h1>Your first skill is {{skills[0]}}</h1>
+      <h1>You are {{isSubscribed ? 'Subscribed' : 'not Subscribed'}}</h1>
+      <h1>You grade in {{courses[0].name}} course is {{courses[0].grade}}</h1>
     </div>
     <script src="./js/vue.js"></script>
     <script>
@@ -16,6 +19,23 @@
         el: "#root",
         data: {
           name: "Hemdan",
+          age: 21,
+          skills: ["HTML", "CSS", "JS", "REACT.JS"],
+          isSubscribed: true,
+          courses: [
+            {
+              name: "first",
+              grade: 80,
+            },
+            {
+              name: "second",
+              grade: 80,
+            },
+            {
+              name: "third",
+              grade: 80,
+            },
+          ],
         },
       });
     </script>
