@@ -8,30 +8,44 @@
   <body>
     <div id="root">
       <h1>Learning Vue.JS</h1>
-      <label>Eg</label>
-      <input type="text" v-model="eg" />
-      <label>SR</label>
-      <input type="text" v-model="sr" />
+      <label>Hours</label>
+      <input type="text" v-model="hours" />
+      <br />
+      <br />
+      <br />
+      <label>Minute</label>
+      <input type="text" v-model="minute" />
+      <br />
+      <br />
+      <br />
+      <label>Seconds</label>
+      <input type="text" v-model="seconds" />
     </div>
     <script src="./js/vue.js"></script>
     <script>
       let vm = new Vue({
         el: "#root",
         data: {
-          eg: 0,
-          sr: 0,
+          hours: 0,
+          minute: 0,
+          seconds: 0,
         },
         methods: {},
         components: {},
         computed: {},
         watch: {
-          eg: function (value) {
-            console.log("eg");
-            this.sr = value / 5;
+          hours: function (curHours, prvHours) {
+            this.minute = curHours * 60;
+            console.log("Hello-Hours");
           },
-          sr: function (value) {
-            console.log("sr");
-            this.eg = value * 5;
+          minute: function (curMinutes, prvMinutes) {
+            this.hours = curMinutes / 60;
+            this.seconds = curMinutes * 60;
+            console.log("Hello-Minutes");
+          },
+          seconds: function (curSeconds, prvSeconds) {
+            this.minute = curSeconds / 60;
+            console.log("Hello-Seconds");
           },
         },
       });
