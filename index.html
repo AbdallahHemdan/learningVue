@@ -12,6 +12,9 @@
       <h1>Your first skill is {{skills[0]}}</h1>
       <h1>You are {{isSubscribed ? 'Subscribed' : 'not Subscribed'}}</h1>
       <h1>You grade in {{courses[0].name}} course is {{courses[0].grade}}</h1>
+      <h1>{{sayHello()}}</h1>
+      <h1>Your age in days is {{calculateMyAge()}}</h1>
+      <h1>Current Data : {{date}}</h1>
     </div>
     <script src="./js/vue.js"></script>
     <script>
@@ -36,6 +39,15 @@
               grade: 80,
             },
           ],
+          date: "Today",
+        },
+        methods: {
+          sayHello: function () {
+            return `Hello, ${this.name}`;
+          },
+          calculateMyAge: function () {
+            return 356 * this.age;
+          },
         },
       });
     </script>
