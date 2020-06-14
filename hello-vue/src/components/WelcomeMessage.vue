@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$fontSize: 60px;
+$fontSize: 50px;
 h1 {
   color: red;
   font-size: $fontSize;
