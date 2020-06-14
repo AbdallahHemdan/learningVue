@@ -7,62 +7,18 @@
   </head>
   <body>
     <div id="root">
-      <h1>List of courses</h1>
-      <ul>
-        <li v-for="course in listOfCourses">{{course}}</li>
-      </ul>
-      <ul>
-        <li v-for="(course, index) in listOfCourses">
-          {{index}} => {{course}}
-        </li>
-      </ul>
-      <ul>
-        <li v-for="(test) in tests">
-          test name : {{test.name}}, test price : {{test.price}}
-        </li>
-      </ul>
+      <h1>Learning Vue.JS</h1>
+      <h2 v-if="name.length">Welcome, {{name}}</h2>
+      <h2 v-else-if="age > 18">You are adult</h2>
+      <h2 v-else>No name, I'm mr.robot</h2>
     </div>
     <script src="./js/vue.js"></script>
     <script>
       let vm = new Vue({
         el: "#root",
         data: {
-          listOfCourses: [
-            "HTML",
-            "CSS",
-            "JS",
-            "REACT",
-            "VUE",
-            "CPP",
-            "C",
-            "TYPESCRIPT",
-          ],
-          tests: [
-            {
-              name: "A",
-              price: 1,
-            },
-            {
-              name: "B",
-              price: 2,
-            },
-            {
-              name: "C",
-              price: 3,
-            },
-            {
-              name: "D",
-              price: 4,
-            },
-            {
-              name: "E",
-              price: 5,
-            },
-            {
-              name: "F",
-              price: 6,
-            },
-          ],
+          name: "Abdallah Hemdan",
+          age: 21,
         },
       });
     </script>
