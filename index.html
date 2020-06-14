@@ -3,50 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue.JS</title>
+    <title>Learn Vue.JS</title>
   </head>
   <body>
     <div id="root">
-      <!-- v-bind === : -->
-      <h1 v-once style="color: red;">{{name}}</h1>
-      <form action="">
-        <label>using v-bind make one-way binding</label>
-        <input type="text" :value="message" />
-        <br /><br />
-        <label>using v-model make two-way binding</label>
-        <input type="text" v-model="message" />
-        <p>Your message {{message}}</p>
-        <br /><br />
-        <input type="checkbox" v-model="checked" />
-        <br />
-        <p>Check value is {{checked}}</p>
-        <br />
-        <br />
-        <br />
-        <input
-          type="checkbox"
-          id="jack"
-          value="hemdan"
-          v-model="checkedNames"
-        />
-        <label for="jack">Jack</label>
-        <input type="checkbox" id="john" value="ahmed" v-model="checkedNames" />
-        <label for="john">John</label>
-        <input type="checkbox" id="mike" value="omar" v-model="checkedNames" />
-        <label for="mike">Mike</label>
-        <br />
-        <span>Checked names: {{ checkedNames }}</span>
-      </form>
+      <h1>Hello, {{name}}</h1>
+      <app-count></app-count>
+      <app-count></app-count>
+      <app-count></app-count>
     </div>
     <script src="./js/vue.js"></script>
     <script>
+      Vue.component("app-count", {
+        data: function () {
+          return {
+            name: "Hemdan",
+            counter: 0,
+          };
+        },
+        template:
+          '<p @click="counter++">Hello, {{name}}, current counter equal to {{counter}}</p>',
+      });
       let vm = new Vue({
         el: "#root",
         data: {
-          name: "Instafolio",
-          message: "this is my message",
-          checked: false,
-          checkedNames: [],
+          name: "Hemdan",
         },
         methods: {},
       });
