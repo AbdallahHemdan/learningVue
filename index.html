@@ -7,14 +7,8 @@
   </head>
   <body>
     <div id="root">
-      <h1>Your name is {{name}}</h1>
-      <h1>Your name is {{age}}</h1>
-      <h1>Your first skill is {{skills[0]}}</h1>
-      <h1>You are {{isSubscribed ? 'Subscribed' : 'not Subscribed'}}</h1>
-      <h1>You grade in {{courses[0].name}} course is {{courses[0].grade}}</h1>
-      <h1>{{sayHello()}}</h1>
-      <h1>Your age in days is {{calculateMyAge()}}</h1>
-      <h1>Current Data : {{date}}</h1>
+      <h1 v-text="name"></h1>
+      <h1 v-html="listOfCourses"></h1>
     </div>
     <script src="./js/vue.js"></script>
     <script>
@@ -22,32 +16,7 @@
         el: "#root",
         data: {
           name: "Hemdan",
-          age: 21,
-          skills: ["HTML", "CSS", "JS", "REACT.JS"],
-          isSubscribed: true,
-          courses: [
-            {
-              name: "first",
-              grade: 80,
-            },
-            {
-              name: "second",
-              grade: 80,
-            },
-            {
-              name: "third",
-              grade: 80,
-            },
-          ],
-          date: "Today",
-        },
-        methods: {
-          sayHello: function () {
-            return `Hello, ${this.name}`;
-          },
-          calculateMyAge: function () {
-            return 356 * this.age;
-          },
+          listOfCourses: `<b class="courses">List of courses ${this.name}</b>`,
         },
       });
     </script>
