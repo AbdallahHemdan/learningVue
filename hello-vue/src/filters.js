@@ -10,3 +10,7 @@ Vue.filter("reverseString", function(value) {
     .reverse()
     .join("");
 });
+
+Vue.filter("shortenText", function(value, mxLength, suffix) {
+  return `${value.slice(0, mxLength)} ${suffix}`;
+});

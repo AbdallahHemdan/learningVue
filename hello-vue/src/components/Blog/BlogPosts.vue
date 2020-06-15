@@ -4,7 +4,7 @@
     <h3 class="post-title">{{ title }}</h3>
     <span class="post-date">{{ date }}</span>
     <p class="post-content">
-      {{ content }}
+      {{ content | shortenText(40, "...etc") }}
     </p>
     <div class="row">
       <div class="col-md-6">
