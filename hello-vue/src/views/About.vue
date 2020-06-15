@@ -1,7 +1,7 @@
 <template>
   <div class="about">
-    <h1>{{ pageName }}</h1>
-    <p>{{ pageDescription }}</p>
+    <h1 v-font-size="40">{{ pageName }}</h1>
+    <p v-bold>{{ pageDescription }}</p>
     <div class="container">
       <div class="alert alert-warning alert-dismissible fade show" role="alert">
         <strong>Holy guacamole!</strong> You should check in on some of those
