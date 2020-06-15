@@ -1,5 +1,5 @@
 <template>
-  <div class="contactus-container">
+  <div class="blog-container">
     <h1>{{ pageName }}</h1>
     <p>{{ pageDescription }}</p>
   </div>
@@ -7,14 +7,12 @@
 
 <script>
 export default {
-  name: "ContactUs",
+  name: "About",
   data: function() {
     return {
-      pageName: "Contact us",
-      pageDescription: "Hello from Contact us page"
+      pageName: "Blog",
+      pageDescription: "Welcome to Blog page "
     };
   }
 };
 </script>
-
-<style></style>

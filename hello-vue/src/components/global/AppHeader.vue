@@ -1,13 +1,14 @@
 <template>
   <div class="app-header">
-    <h1 class="logo">Hemdan</h1>
+    <h1 class="logo">
+      <router-link to="/" exact><a>Hemdan</a></router-link>
+    </h1>
     <ul>
       <router-link to="/" tag="li" exact><a>Home</a></router-link>
+      <router-link to="/blog" tag="li"><a>Blog</a></router-link>
       <router-link to="/about" tag="li"><a>About</a></router-link>
-      <router-link to="/help" tag="li" replace><a>Help</a></router-link>
-      <router-link to="/contactus" tag="li" replace
-        ><a>contact us</a></router-link
-      >
+      <router-link to="/help" tag="li"><a>Help</a></router-link>
+      <router-link to="/contactus" tag="li"><a>Contact us</a></router-link>
     </ul>
   </div>
 </template>
@@ -28,6 +29,10 @@ export default {
     padding: 20px;
     float: left;
     width: 200px;
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
   }
   ul {
     float: right;
