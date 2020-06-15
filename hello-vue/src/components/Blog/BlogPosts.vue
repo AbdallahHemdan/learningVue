@@ -1,20 +1,17 @@
 <template>
   <div class="post-container">
-    <span class="post-views">51</span>
-    <h3 class="post-title">Blog Post Titel</h3>
-    <span class="post-date">25-10-2020</span>
+    <span class="post-views">{{ views }}</span>
+    <h3 class="post-title">{{ title }}</h3>
+    <span class="post-date">{{ date }}</span>
     <p class="post-content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nulla
-      dolorem ducimus hic earum praesentium voluptates adipisci repellendus
-      fugit iusto ipsa repudiandae delectus nam, sint a deleniti debitis quos
-      beatae?
+      {{ content }}
     </p>
     <div class="row">
       <div class="col-md-6">
-        <span class="post-author">Post Author</span>
+        <span class="post-author">{{ author }}</span>
       </div>
       <div class="col-md-6 text-right">
-        <span class="post-cateogry">Category Name</span>
+        <span class="post-cateogry">{{ category.slice(0, 10) }}</span>
       </div>
     </div>
   </div>
@@ -22,7 +19,8 @@
 
 <script>
 export default {
-  name: "BlogPosts"
+  name: "BlogPosts",
+  props: ["views", "title", "date", "content", "author", "category"]
 };
 </script>
 
@@ -33,6 +31,7 @@ export default {
   box-shadow: 0 0 10px #ddd;
   position: relative;
   text-align: left;
+  margin-bottom: 40px;
   .post-views {
     position: absolute;
     top: 5px;
