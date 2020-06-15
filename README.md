@@ -5,7 +5,7 @@
 
 </div>
 
-<h1 align="center">Learning Vue Essentials</h1>
+<h2 align="center">Learning Vue Essentials</h2>
 
 <div align="center">
 
@@ -21,6 +21,10 @@
 > All codes I write while learning Vue.JS, new commit = new Lesson.
 
 ## Learning path
+
+### Courses
+> List of courses and topics I learned in Vue.js
+
 - [x] Introductory course
   <details>
 
@@ -64,6 +68,9 @@
   - [x] Create Custom Directives Part Two
   
   </details>
+
+### Project
+> List of side projects I am willing to do using Vue.js.
 
 ## Licence
 > This software is licensed under MIT License, See [License](https://github.com/AbdallahHemdan/learningVue/blob/master/LICENSE) for more information ©AbdallahHemdan.
