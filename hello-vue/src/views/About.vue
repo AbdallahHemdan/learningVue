@@ -1,7 +1,7 @@
 <template>
   <div class="about">
-    <h1 v-font-size="40">{{ pageName }}</h1>
-    <p v-bold>{{ pageDescription }}</p>
+    <h1 v-format.bold.orange="50">{{ pageName }}</h1>
+    <p v-boldy v-bluey v-fonty="50">{{ pageDescription }}</p>
     <div class="container">
       <div class="alert alert-warning alert-dismissible fade show" role="alert">
         <strong>Holy guacamole!</strong> You should check in on some of those
@@ -27,6 +27,17 @@ export default {
       pageName: "About us",
       pageDescription: "Welcome to About us page "
     };
+  },
+  directives: {
+    boldy: function(el) {
+      el.style.fontWeight = "bold";
+    },
+    bluey: function(el) {
+      el.style.color = "blue";
+    },
+    fonty: function(el, binding) {
+      el.style.fontSize = `${binding.value}px`;
+    }
   }
 };
 </script>
