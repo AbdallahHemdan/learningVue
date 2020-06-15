@@ -11,7 +11,9 @@
         <span class="post-author">{{ author }}</span>
       </div>
       <div class="col-md-6 text-right">
-        <span class="post-cateogry">{{ category.slice(0, 10) }}</span>
+        <span class="post-cateogry">{{
+          category.slice(0, 10) | convertToUpperCase
+        }}</span>
       </div>
     </div>
   </div>
