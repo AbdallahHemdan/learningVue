@@ -3,22 +3,13 @@ let vm = new Vue({
   data: {
     name: "Abdallah Hemdan",
     age: 21,
-    xPosition: 0,
-    yPosition: 0,
   },
   methods: {
-    incrementAge: function (yearsToAdd) {
-      this.age += yearsToAdd;
+    logName: function (e) {
+      console.log(e.target.value);
     },
-    decrementAge: function (yearsToSubtract) {
-      this.age -= yearsToSubtract;
-    },
-    trackMouse: function (e) {
-      this.xPosition = e.x;
-      this.yPosition = e.y;
-    },
-    fireAlarm: function (e) {
-      alert("You clicked hemdan github account link");
+    logAge: function (e) {
+      console.log(e.target.value);
     },
   },
 });
