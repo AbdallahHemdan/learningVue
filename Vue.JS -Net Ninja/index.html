@@ -9,10 +9,13 @@
   <body>
     <div id="root">
       <h1>My current age : {{age}}</h1>
-      <button @click="incrementAge(1)">Increment one year</button>
+      <button @click.once="incrementAge(1)">Increment one year</button>
       <button @click="decrementAge(1)">Decrement one year</button>
       <button @dblclick="incrementAge(10)">Increment ten years</button>
       <button @dblclick="decrementAge(10)">Decrement ten years</button>
+      <a href="https://github.com/AbdallahHemdan" @click.prevent="fireAlarm"
+        >Hemdan Github account</a
+      >
       <div class="canvas" @mousemove="trackMouse">
         {{xPosition}}, {{yPosition}}
       </div>

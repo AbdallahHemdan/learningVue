@@ -17,5 +17,8 @@ let vm = new Vue({
       this.xPosition = e.x;
       this.yPosition = e.y;
     },
+    fireAlarm: function (e) {
+      alert("You clicked hemdan github account link");
+    },
   },
 });
