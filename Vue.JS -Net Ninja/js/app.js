@@ -1,8 +1,8 @@
 let vm = new Vue({
   el: "#root",
   data: {
-    name: "Abdallah Hemdan",
-    age: 21,
+    name: "",
+    age: "",
   },
   methods: {
     logName: function (e) {
