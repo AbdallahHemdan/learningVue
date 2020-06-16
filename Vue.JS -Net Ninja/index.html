@@ -8,13 +8,14 @@
   </head>
   <body>
     <div id="root">
-      <h1>{{name}}</h1>
-      <h2>{{job}}</h2>
-      <h3>{{addSir(15)}}</h3>
-      <h4>Github Link : {{githubLink}}</h4>
-      <a :href="githubLink">Hemdan's Github</a>
-      <p v-html="websiteTag"></p>
-      <input type="text" :value="name" />
+      <h1>My current age : {{age}}</h1>
+      <button @click="incrementAge(1)">Increment one year</button>
+      <button @click="decrementAge(1)">Decrement one year</button>
+      <button @dblclick="incrementAge(10)">Increment ten years</button>
+      <button @dblclick="decrementAge(10)">Decrement ten years</button>
+      <div class="canvas" @mousemove="trackMouse">
+        {{xPosition}}, {{yPosition}}
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/app.js"></script>

@@ -2,13 +2,20 @@ let vm = new Vue({
   el: "#root",
   data: {
     name: "Abdallah Hemdan",
-    job: "Ninja",
-    githubLink: "https://github.com/AbdallahHemdan",
-    websiteTag: `<a href="https://github.com/AbdallahHemdan">Hemdan</a>`,
+    age: 21,
+    xPosition: 0,
+    yPosition: 0,
   },
   methods: {
-    addSir: function (age) {
-      return `Sir, ${this.name}. You're ${age} years old`;
+    incrementAge: function (yearsToAdd) {
+      this.age += yearsToAdd;
+    },
+    decrementAge: function (yearsToSubtract) {
+      this.age -= yearsToSubtract;
+    },
+    trackMouse: function (e) {
+      this.xPosition = e.x;
+      this.yPosition = e.y;
     },
   },
 });
