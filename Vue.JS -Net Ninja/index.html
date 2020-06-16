@@ -8,23 +8,13 @@
   </head>
   <body>
     <div id="root">
-      <h1>Keyboard events</h1>
-      <label for="name">Name</label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        @keyup="logName"
-        v-model="name"
-      />
-      <br />
-      <span>Current name : {{name}}</span>
-      <br />
-      <label for="age">Age</label>
-      <input type="text" name="age" id="age" @keyup="logAge" v-model="age" />
-      <br />
-      <span>Current age : {{age}}</span>
-      <br />
+      <h1>Abdallah Hemdan</h1>
+      <button @click="incrementA">IncrementA</button>
+      <button @click="incrementB">IncrementB</button>
+      <p>A : {{a}}</p>
+      <p>B : {{b}}</p>
+      <p>Age + A : {{ addAgeToA }}</p>
+      <p>Age + B : {{ addAgeToB }}</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/app.js"></script>

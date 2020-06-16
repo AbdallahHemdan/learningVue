@@ -1,15 +1,26 @@
 let vm = new Vue({
   el: "#root",
   data: {
-    name: "",
-    age: "",
+    age: 25,
+    a: 0,
+    b: 0,
   },
   methods: {
-    logName: function (e) {
-      console.log(e.target.value);
+    incrementA: function () {
+      this.a++;
     },
-    logAge: function (e) {
-      console.log(e.target.value);
+    incrementB: function () {
+      this.b++;
+    },
+  },
+  computed: {
+    addAgeToA: function () {
+      console.log("addAgeToA");
+      return this.age + this.a;
+    },
+    addAgeToB: function () {
+      console.log("addAgeToB");
+      return this.age + this.b;
     },
   },
 });
