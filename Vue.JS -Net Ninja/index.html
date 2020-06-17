@@ -8,10 +8,17 @@
   </head>
   <body>
     <div id="root">
-      <button @click="toggleState">Toggle state</button>
-      <div class="success" v-if="state">Success</div>
-      <div class="error" v-else>Error</div>
-      <div v-show="state">Test show attribute</div>
+      <template v-for="person in persons">
+        <h1>{{person.name}}</h1>
+        <h2>{{person.age}}</h2>
+        <hr />
+      </template>
+      <template v-for="person in persons">
+        <template v-for="(val, key) in person">
+          {{key}} : {{val}}
+          <br />
+        </template>
+      </template>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/app.js"></script>

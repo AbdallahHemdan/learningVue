@@ -1,12 +1,21 @@
 let vm = new Vue({
   el: "#root",
   data: {
-    state: false,
+    persons: [
+      {
+        name: "Abdallah",
+        age: 21,
+      },
+      {
+        name: "Ahmed",
+        age: 47,
+      },
+      {
+        name: "Omar",
+        age: 11,
+      },
+    ],
   },
-  methods: {
-    toggleState: function () {
-      this.state ^= 1;
-    },
-  },
+  methods: {},
   computed: {},
 });
