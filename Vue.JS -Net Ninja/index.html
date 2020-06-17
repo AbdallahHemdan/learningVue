@@ -8,18 +8,13 @@
   </head>
   <body>
     <div id="root">
-      <div id="bag-container" :class="{ burst : isEndGame}"></div>
-      <div class="bag-health">
-        <div class="health-score" :style="scoreStyle"></div>
-      </div>
-      <div class="game-controls">
-        <button class="controller" @click="punchBag">
-          Punch
-        </button>
-        <button class="controller" @click="resetHealth" v-if="isEndGame">
-          Reset
-        </button>
-      </div>
+      <h1>{{name}}</h1>
+      <h2>{{greet}}</h2>
+    </div>
+    <div id="root2">
+      <h1>{{name2}}</h1>
+      <h2>{{greet}}</h2>
+      <button @click="hackFirstApp">Hack 1st app</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/app.js"></script>

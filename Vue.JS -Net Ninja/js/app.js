@@ -1,26 +1,29 @@
 let vm = new Vue({
   el: "#root",
   data: {
-    health: 100,
-    isEndGame: false,
+    name: "Hemdan",
+  },
+  methods: {},
+  computed: {
+    greet: function () {
+      return "Welcome for app one";
+    },
+  },
+});
+
+let vm2 = new Vue({
+  el: "#root2",
+  data: {
+    name2: "Hemdan2",
   },
   methods: {
-    punchBag: function () {
-      this.health -= 10;
-      if (this.health <= 0) {
-        // you dead
-        this.isEndGame = true;
-        this.health;
-      }
-    },
-    resetHealth: function () {
-      this.health = 100;
-      this.isEndGame = false;
+    hackFirstApp: function () {
+      vm.name = "Hacker named hemdan was here";
     },
   },
   computed: {
-    scoreStyle: function () {
-      return { width: `${this.health}%` };
+    greet: function () {
+      return "Welcome for app two";
     },
   },
 });
