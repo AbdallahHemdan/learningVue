@@ -8,13 +8,13 @@
   </head>
   <body>
     <div id="root">
-      <h1>Abdallah Hemdan</h1>
-      <button @click="incrementA">IncrementA</button>
-      <button @click="incrementB">IncrementB</button>
-      <p>A : {{a}}</p>
-      <p>B : {{b}}</p>
-      <p>Age + A : {{ addAgeToA }}</p>
-      <p>Age + B : {{ addAgeToB }}</p>
+      <div :class="{brand:isBrand, title : isTitle}">Abdallah Ahmed</div>
+      <button @click="toggleAvailability">toggle availability</button>
+      <div class="product">
+        <span :class="productClasses">
+          <h1>product name</h1>
+        </span>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/app.js"></script>

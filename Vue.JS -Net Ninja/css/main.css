@@ -5,3 +5,11 @@
   border: 1px solid #f00;
   margin-top: 50px;
 }
+
+.available {
+  color: green;
+}
+
+.outOfStore {
+  color: red;
+}
