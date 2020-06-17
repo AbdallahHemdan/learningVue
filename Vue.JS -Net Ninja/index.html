@@ -8,17 +8,18 @@
   </head>
   <body>
     <div id="root">
-      <template v-for="person in persons">
-        <h1>{{person.name}}</h1>
-        <h2>{{person.age}}</h2>
-        <hr />
-      </template>
-      <template v-for="person in persons">
-        <template v-for="(val, key) in person">
-          {{key}} : {{val}}
-          <br />
-        </template>
-      </template>
+      <div id="bag-container" :class="{ burst : isEndGame}"></div>
+      <div class="bag-health">
+        <div class="health-score" :style="scoreStyle"></div>
+      </div>
+      <div class="game-controls">
+        <button class="controller" @click="punchBag">
+          Punch
+        </button>
+        <button class="controller" @click="resetHealth" v-if="isEndGame">
+          Reset
+        </button>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/app.js"></script>

@@ -1,15 +1,42 @@
-.canvas {
-  width: 600px;
+#bag-container {
+  width: 200px;
+  height: 500px;
+  margin: 0 auto;
+  background: url("/images/bag.png") center no-repeat;
+  background-size: 80%;
+}
+
+#bag-container.burst {
+  background: url("/images/bag-burst.png") center no-repeat;
+  background-size: 80%;
+}
+
+.bag-health {
+  width: 200px;
+  border: 2px solid black;
+  margin: 0 auto 20px auto;
+}
+
+.bag-health .health-score {
+  height: 32px;
+  background-color: crimson;
   text-align: center;
-  padding: 200px 20px;
-  border: 1px solid #f00;
-  margin-top: 50px;
+  color: #fff;
+  font-size: 30px;
 }
 
-.available {
-  color: green;
+.game-controls {
+  width: 200px;
+  margin: 0 auto;
 }
-
-.outOfStore {
-  color: red;
+.controller {
+  width: 100%;
+  margin: 5px 0;
+  height: 38px;
+  font-size: 19px;
+  background: #f5f5f5f5;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
 }
