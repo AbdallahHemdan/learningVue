@@ -8,13 +8,10 @@
   </head>
   <body>
     <div id="root">
-      <div :class="{brand:isBrand, title : isTitle}">Abdallah Ahmed</div>
-      <button @click="toggleAvailability">toggle availability</button>
-      <div class="product">
-        <span :class="productClasses">
-          <h1>product name</h1>
-        </span>
-      </div>
+      <button @click="toggleState">Toggle state</button>
+      <div class="success" v-if="state">Success</div>
+      <div class="error" v-else>Error</div>
+      <div v-show="state">Test show attribute</div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/app.js"></script>
