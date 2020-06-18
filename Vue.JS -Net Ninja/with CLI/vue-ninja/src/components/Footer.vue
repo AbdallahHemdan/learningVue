@@ -1,15 +1,22 @@
 <template>
   <footer>
-    <p>
+    <!-- <p>
       made with ❤ by
       <a href="https://github.com/AbdallahHemdan">Abdallah Hemdan</a> &copy;
       2020
-    </p>
+    </p> -->
+    {{ brandName }}
   </footer>
 </template>
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
+  props: {
+    brandName: {
+      type: String,
+      required: true
+    }
+  }
 };
 </script>
 

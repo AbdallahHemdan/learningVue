@@ -1,6 +1,7 @@
 <template>
   <header>
     <h1>{{ brandName }}</h1>
+    <button @click="changeBrandName">Change brandName</button>
   </header>
 </template>
 
@@ -8,9 +9,18 @@
 export default {
   name: "Header",
   data: function() {
-    return {
-      brandName: "Vue ninja"
-    };
+    return {};
+  },
+  props: {
+    brandName: {
+      type: String,
+      required: true
+    }
+  },
+  methods: {
+    changeBrandName: function() {
+      this.brandName = "Hemdan";
+    }
   }
 };
 </script>

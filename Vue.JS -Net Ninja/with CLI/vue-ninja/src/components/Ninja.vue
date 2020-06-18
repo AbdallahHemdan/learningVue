@@ -10,7 +10,7 @@
         <h3 v-if="ninja.show">{{ ninja.speciality }}</h3>
       </li>
     </ul>
-    <button @click="logNinjas">Click me</button>
+    <button @click="deleteNinja">Delete Ninja</button>
   </div>
 </template>
 
@@ -24,8 +24,8 @@ export default {
     toggleNinjaSpeciality: function(ninjaIndex) {
       this.ninjas[ninjaIndex] ^= 1;
     },
-    logNinjas: function() {
-      console.log(this.ninjas);
+    deleteNinja: function() {
+      this.ninjas.pop();
     }
   },
   props: {
