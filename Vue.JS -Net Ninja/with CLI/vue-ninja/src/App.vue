@@ -3,7 +3,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "App",
+  data: function() {
+    return {};
+  }
+};
 </script>
 
 <style>
