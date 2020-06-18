@@ -1,6 +1,6 @@
 <template>
   <div class="ninjas">
-    <h3>Hello from ninjas component</h3>
+    <h1>Hello from ninjas component</h1>
     <ul>
       <li v-for="(ninja, index) in ninjas" :key="index">{{ ninja }}</li>
     </ul>
@@ -17,5 +17,9 @@ export default {
   }
 };
 </script>
-<style></style>
+<style scoped>
+h1 {
+  color: rgb(255, 0, 0);
+}
+</style>
 
