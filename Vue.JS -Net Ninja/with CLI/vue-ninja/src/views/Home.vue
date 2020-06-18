@@ -1,25 +1,16 @@
 <template>
   <div class="home">
-    <h1>Hello, {{ name }}</h1>
-    <p>{{ title }}</p>
-    <p>{{ greeting() }}</p>
+    <h1>Hello, Home</h1>
+    <Ninjas />
   </div>
 </template>
 
 <script>
+import Ninjas from "./../components/Ninjas.vue";
 export default {
   name: "Home",
-  data: function() {
-    return {
-      name: "Hemdan",
-      title: "my name is Abdallah ahmed hemdan"
-    };
-  },
-  methods: {
-    greeting: function() {
-      return `hey, ${this.name}`;
-    }
-  },
-  components: {}
+  components: {
+    Ninjas
+  }
 };
 </script>
