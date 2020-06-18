@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <app-header :brandName="brandName" />
-    <app-content :ninjas="ninjas" />
-    <hr />
+    <app-header :brandName="brandName" @changeBrand="changeBrandName($event)" />
     <app-content :ninjas="ninjas" />
     <app-footer :brandName="brandName" />
   </div>
@@ -32,6 +30,11 @@ export default {
       ],
       brandName: "Vue ninja"
     };
+  },
+  methods: {
+    changeBrandName: function(newBrand) {
+      this.brandName = newBrand;
+    }
   }
 };
 </script>

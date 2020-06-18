@@ -1,7 +1,6 @@
 <template>
   <header>
-    <h1>{{ brandName }}</h1>
-    <button @click="changeBrandName">Change brandName</button>
+    <h1 @click="changeBrandName">{{ brandName }}</h1>
   </header>
 </template>
 
@@ -19,7 +18,7 @@ export default {
   },
   methods: {
     changeBrandName: function() {
-      this.brandName = "Hemdan";
+      this.$emit("changeBrand", "Hemdan");
     }
   }
 };
