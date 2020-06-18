@@ -1,16 +1,22 @@
 <template>
   <div class="home">
-    <h1>Hello, Home</h1>
-    <Ninjas />
+    <app-header />
+    <app-content />
+    <app-footer />
   </div>
 </template>
 
 <script>
-import Ninjas from "./../components/Ninjas.vue";
+import Header from "./../components/Header";
+import Footer from "./../components/Footer";
+import Ninja from "./../components/Ninja";
+
 export default {
   name: "Home",
   components: {
-    Ninjas
+    "app-header": Header,
+    "app-content": Ninja,
+    "app-footer": Footer
   }
 };
 </script>
