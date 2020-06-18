@@ -1,29 +1,31 @@
-let vm = new Vue({
-  el: "#root",
-  data: {
-    name: "Hemdan",
+Vue.component("Greeting", {
+  template: `
+    <div>
+      <p>Hello, I am a reusable component {{name}}</p>
+      <button @click="changeMyFirstName">Click me please</button>
+    </div>
+  `,
+  data: function () {
+    return {
+      name: "Abdallah",
+    };
   },
-  methods: {},
-  computed: {
-    greet: function () {
-      return "Welcome for app one";
+  methods: {
+    changeMyFirstName: function () {
+      this.name = "Hemdan";
     },
   },
+});
+let vm = new Vue({
+  el: "#root",
+  data: {},
+  methods: {},
+  computed: {},
 });
 
 let vm2 = new Vue({
   el: "#root2",
-  data: {
-    name2: "Hemdan2",
-  },
-  methods: {
-    hackFirstApp: function () {
-      vm.name = "Hacker named hemdan was here";
-    },
-  },
-  computed: {
-    greet: function () {
-      return "Welcome for app two";
-    },
-  },
+  data: {},
+  methods: {},
+  computed: {},
 });
