@@ -1,39 +1,46 @@
 <template>
-  <div class="home">
-    <app-header :brandName="brandName" @changeBrand="changeBrandName($event)" />
-    <app-content :ninjas="ninjas" />
-    <app-footer :brandName="brandName" />
+  <div class="">
+    <form-helper>
+      <div slot="form-header">
+        <h1>I am the form header</h1>
+      </div>
+      <div slot="form-fields">
+        <input type="text" placeholder="username" required v-model="username" />
+        <input type="email" placeholder="email" required v-model="email" />
+        <input
+          type="password"
+          placeholder="password"
+          required
+          v-model="password"
+        />
+      </div>
+      <div slot="form-controls">
+        <button type="submit" @click.prevent="handleSubmit">Sumit</button>
+      </div>
+    </form-helper>
   </div>
 </template>
 
 <script>
-import Header from "./../components/Header";
-import Footer from "./../components/Footer";
-import Ninja from "./../components/Ninja";
+import FormHelper from "./../components/FormHelper";
 
 export default {
   name: "Home",
   components: {
-    "app-header": Header,
-    "app-content": Ninja,
-    "app-footer": Footer
+    "form-helper": FormHelper
   },
   data: function() {
     return {
-      ninjas: [
-        { name: "Ryus", speciality: "Vue Components", show: false },
-        { name: "Crystal", speciality: "HTML Wizardry", show: false },
-        { name: "Hitoshi", speciality: "Click Events", show: false },
-        { name: "Tango", speciality: "Conditionals", show: false },
-        { name: "Kami", speciality: "Webpack", show: false },
-        { name: "Yoshi", speciality: "Data Diggin", show: false }
-      ],
-      brandName: "Vue ninja"
+      username: "",
+      email: "",
+      password: ""
     };
   },
   methods: {
-    changeBrandName: function(newBrand) {
-      this.brandName = newBrand;
+    handleSubmit: function() {
+      console.log(this.username);
+      console.log(this.email);
+      console.log(this.password);
     }
   }
 };
