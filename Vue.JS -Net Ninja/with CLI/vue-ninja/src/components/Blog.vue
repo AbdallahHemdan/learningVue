@@ -66,6 +66,7 @@
             >
           </select>
         </section>
+        <button @click.prevent="storeBlog">Submit</button>
       </form>
     </div>
     <div class="preview">
@@ -85,10 +86,41 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Blog",
   components: {},
-  methods: {},
+  methods: {
+    storeBlog: function() {
+      axios
+        .post("https://jsonplaceholder.typicode.com/posts", {
+          userId: 5,
+          id: 101,
+          title: this.blog.blogTitle,
+          body: this.blog.blogContent
+        })
+        .then(result => {
+          console.log(result);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+      // this.$http
+      // .post("https://jsonplaceholder.typicode.com/posts", {
+      //   userId: 5,
+      //   id: 101,
+      //   title: this.blog.blogTitle,
+      //   body: this.blog.blogContent
+      // })
+      // .then(result => {
+      //   console.log(result);
+      // })
+      // .catch(err => {
+      //   console.log(err);
+      // });
+    }
+  },
   data: function() {
     return {
       blog: {
