@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1 @click="changeBrandName">{{ brandName }}</h1>
+    <h1 @click="changeBrandName">{{ myBrandName }}</h1>
   </header>
 </template>
 
@@ -10,7 +10,9 @@ import { bus } from "./../main";
 export default {
   name: "Header",
   data: function() {
-    return {};
+    return {
+      myBrandName: this.brandName
+    };
   },
   props: {
     brandName: {
@@ -21,8 +23,8 @@ export default {
   methods: {
     changeBrandName: function() {
       // this.$emit("changeBrand", "Hemdan");
-      this.brandName = "Hemdan";
-      bus.$emit("brandChanged", this.brandName);
+      this.myBrandName = "Hemdan";
+      bus.$emit("brandChanged", this.myBrandName);
     }
   }
 };

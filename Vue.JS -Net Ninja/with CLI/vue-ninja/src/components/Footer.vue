@@ -5,7 +5,7 @@
       <a href="https://github.com/AbdallahHemdan">Abdallah Hemdan</a> &copy;
       2020
     </p> -->
-    {{ brandName }}
+    {{ myBrandName }}
   </footer>
 </template>
 
@@ -20,9 +20,14 @@ export default {
       required: true
     }
   },
+  data: function() {
+    return {
+      myBrandName: this.brandName
+    };
+  },
   created: function() {
     bus.$on("brandChanged", data => {
-      this.brandName = data;
+      this.myBrandName = data;
     });
   }
 };
