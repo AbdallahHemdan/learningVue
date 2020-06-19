@@ -21,6 +21,40 @@
           rows="10"
           v-model.lazy="blog.blogContent"
         ></textarea>
+        <section class="checkboxes">
+          <label for="ninjas">Nanjas</label>
+          <input
+            type="checkbox"
+            name="ninjas"
+            id="ninjas"
+            value="ninjas"
+            v-model="blog.categories"
+          />
+          <label for="wizards">Wizards</label>
+          <input
+            type="checkbox"
+            name="wizards"
+            id="wizards"
+            value="wizards"
+            v-model="blog.categories"
+          />
+          <label for="mario">Mario</label>
+          <input
+            type="checkbox"
+            name="mario"
+            id="mario"
+            value="mario"
+            v-model="blog.categories"
+          />
+          <label for="cheese">Cheese</label>
+          <input
+            type="checkbox"
+            name="cheese"
+            id="cheese"
+            value="cheese"
+            v-model="blog.categories"
+          />
+        </section>
       </form>
     </div>
     <div class="preview">
@@ -29,6 +63,10 @@
       <p>{{ blog.blogTitle }}</p>
       <h3>Blog content</h3>
       <p class="content-area">{{ blog.blogContent }}</p>
+      <h4>Categories choosen</h4>
+      <p v-for="(category, index) in blog.categories" :key="index">
+        {{ category }}
+      </p>
     </div>
   </div>
 </template>
@@ -42,7 +80,8 @@ export default {
     return {
       blog: {
         blogTitle: "",
-        blogContent: ""
+        blogContent: "",
+        categories: []
       }
     };
   }
@@ -75,5 +114,15 @@ h3 {
 
 .content-area {
   white-space: pre-line;
+}
+
+.checkboxes input,
+label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.checkboxes input {
+  margin-right: 30px;
 }
 </style>
