@@ -55,6 +55,17 @@
             v-model="blog.categories"
           />
         </section>
+        <section class="select-author">
+          <select name="" id="" v-model="blog.author">
+            <option value="" disabled>Please select an Author</option>
+            <option
+              :value="author"
+              v-for="(author, index) in authors"
+              :key="index"
+              >{{ author }}</option
+            >
+          </select>
+        </section>
       </form>
     </div>
     <div class="preview">
@@ -67,6 +78,8 @@
       <p v-for="(category, index) in blog.categories" :key="index">
         {{ category }}
       </p>
+      <h4>Selected Value:</h4>
+      <p>{{ blog.author }}</p>
     </div>
   </div>
 </template>
@@ -81,8 +94,17 @@ export default {
       blog: {
         blogTitle: "",
         blogContent: "",
-        categories: []
-      }
+        categories: [],
+        author: ""
+      },
+      authors: [
+        "Abdallah Hemdan",
+        "Omar Hemdan",
+        "Mohamed  Hemdan",
+        "Rokia Hemdan",
+        "Ahmed Hemdan",
+        "Mamdouh Hemdan"
+      ]
     };
   }
 };
