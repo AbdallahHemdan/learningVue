@@ -33,6 +33,26 @@ export default {
       type: Array,
       required: true
     }
+  },
+  beforeCreate: function() {
+    alert("before Ninja component is created");
+  },
+  created: function() {
+    // good for fetching the data
+    alert("after creation of Ninja component");
+  },
+  beforeMount: function() {
+    alert("before Ninja component mounted");
+  },
+  mounted: function() {
+    // good for manipulating the dom
+    alert("after Ninja component has mounted");
+  },
+  beforeUpdate: function() {
+    alert("before Ninja component update");
+  },
+  updated: function() {
+    alert("after Ninja component updated");
   }
 };
 </script>
