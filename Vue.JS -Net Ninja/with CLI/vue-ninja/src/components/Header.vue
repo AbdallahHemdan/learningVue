@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { bus } from "./../main";
+
 export default {
   name: "Header",
   data: function() {
@@ -18,7 +20,9 @@ export default {
   },
   methods: {
     changeBrandName: function() {
-      this.$emit("changeBrand", "Hemdan");
+      // this.$emit("changeBrand", "Hemdan");
+      this.brandName = "Hemdan";
+      bus.$emit("brandChanged", this.brandName);
     }
   }
 };

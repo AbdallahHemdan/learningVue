@@ -8,7 +8,10 @@
     {{ brandName }}
   </footer>
 </template>
+
 <script>
+import { bus } from "./../main";
+
 export default {
   name: "Footer",
   props: {
@@ -16,6 +19,11 @@ export default {
       type: String,
       required: true
     }
+  },
+  created: function() {
+    bus.$on("brandChanged", data => {
+      this.brandName = data;
+    });
   }
 };
 </script>
