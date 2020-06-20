@@ -1,7 +1,16 @@
 <template>
   <div v-theme:column="`narrow`" class="display-blogs-container">
     <h1>List of all blogs</h1>
-    <div class="single-blog" v-for="(blog, index) in blogs" :key="index">
+    <input
+      type="text"
+      v-model="search"
+      placeholder="search for a certain blog"
+    />
+    <div
+      class="single-blog"
+      v-for="(blog, index) in filteredBlogs"
+      :key="index"
+    >
       <h1 v-rand-color>{{ blog.title | toUppercase }}</h1>
       <article>{{ blog.body | shorten("...etc") }}</article>
     </div>
@@ -12,10 +21,19 @@
 export default {
   name: "DisplayBlogs",
   data: function() {
-    return { blogs: [] };
+    return {
+      blogs: [],
+      search: ""
+    };
   },
   methods: {},
-  computed: {},
+  computed: {
+    filteredBlogs: function() {
+      return this.blogs.filter(({ title }) => {
+        return title.match(this.search);
+      });
+    }
+  },
   components: {},
   created: function() {
     this.$http
@@ -35,6 +53,20 @@ export default {
   max-width: 800px;
   margin: 0px auto;
 }
+
+.display-blogs-container input {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+input:focus {
+  outline: none;
+}
+
 .single-blog {
   padding: 20px;
   margin: 20px 0;
