@@ -94,12 +94,7 @@ export default {
   methods: {
     storeBlog: function() {
       axios
-        .post("https://jsonplaceholder.typicode.com/posts", {
-          userId: 5,
-          id: 101,
-          title: this.blog.blogTitle,
-          body: this.blog.blogContent
-        })
+        .post("https://learningvue-cbe9e.firebaseio.com/posts.json", this.blog)
         .then(result => {
           console.log(result);
         })
