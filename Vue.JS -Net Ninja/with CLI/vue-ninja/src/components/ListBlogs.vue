@@ -1,6 +1,6 @@
 <template>
   <div v-theme:column="`narrow`" class="display-blogs-container">
-    <h1>List of all blogs</h1>
+    <h1>List blogs titles</h1>
     <input
       type="text"
       v-model="search"
@@ -12,7 +12,6 @@
       :key="index"
     >
       <h1 v-randColor>{{ blog.title | toUppercase }}</h1>
-      <article>{{ blog.body | shorten("...etc") }}</article>
     </div>
   </div>
 </template>
@@ -21,7 +20,7 @@
 import SearchMixin from "./../mixins/SearchMixin";
 
 export default {
-  name: "DisplayBlogs",
+  name: "ListBlogs",
   data: function() {
     return {
       blogs: [],
@@ -75,7 +74,7 @@ export default {
 <style scoped>
 .display-blogs-container {
   max-width: 800px;
-  margin: 0px auto;
+  margin: 50px auto;
 }
 
 .display-blogs-container input {
