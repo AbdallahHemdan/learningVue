@@ -11,7 +11,9 @@
       v-for="(blog, index) in filteredBlogs"
       :key="index"
     >
-      <h1 v-randColor>{{ blog.title | toUppercase }}</h1>
+      <router-link :to="'/blog/' + blog.id">
+        <h1 v-randColor>{{ blog.title | toUppercase }}</h1>
+      </router-link>
       <article>{{ blog.body | shorten("...etc") }}</article>
     </div>
   </div>

@@ -3,6 +3,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import DisplayBlogs from "./../components/DisplayBlogs";
 import Blog from "./../components/Blog";
+import SingleBlog from "./../components/SingleBlog.vue";
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -15,6 +17,11 @@ const routes = [
     path: "/add-blog",
     name: "AddBlogs",
     component: Blog,
+  },
+  {
+    path: "/blog/:id",
+    name: "SingleBlog",
+    component: SingleBlog,
   },
   {
     path: "*",
