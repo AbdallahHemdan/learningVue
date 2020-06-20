@@ -1,8 +1,8 @@
 <template>
-  <div class="display-blogs-container">
+  <div v-theme:column="`narrow`" class="display-blogs-container">
     <h1>List of all blogs</h1>
     <div class="single-blog" v-for="(blog, index) in blogs" :key="index">
-      <h1>{{ blog.title }}</h1>
+      <h1 v-rand-color>{{ blog.title }}</h1>
       <article>{{ blog.body }}</article>
     </div>
   </div>
