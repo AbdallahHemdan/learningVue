@@ -12,9 +12,9 @@
       :key="index"
     >
       <router-link :to="'/blog/' + blog.id">
-        <h1 v-randColor>{{ blog.title | toUppercase }}</h1>
+        <h1 v-randColor>{{ blog.blogTitle | toUppercase }}</h1>
       </router-link>
-      <article>{{ blog.body | shorten("...etc") }}</article>
+      <article>{{ blog.blogContent | shorten("...etc") }}</article>
     </div>
   </div>
 </template>
@@ -35,9 +35,14 @@ export default {
   components: {},
   created: function() {
     this.$http
-      .get("https://jsonplaceholder.typicode.com/posts")
-      .then(result => {
-        this.blogs = result.data.slice(0, 10);
+      .get("https://learningvue-cbe9e.firebaseio.com/posts.json")
+      .then(({ data }) => {
+        let listOfBlogs = [];
+        for (let key in data) {
+          data[key].id = key;
+          listOfBlogs.push(data[key]);
+        }
+        this.blogs = listOfBlogs;
       })
       .catch(err => {
         console.log(err);

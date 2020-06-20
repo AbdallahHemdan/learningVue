@@ -1,7 +1,13 @@
 <template>
   <div class="single-blog">
-    <h1 class="title">{{ blog.title }}</h1>
-    <article>{{ blog.body }}</article>
+    <h1 class="title">{{ blog.blogTitle }}</h1>
+    <article>{{ blog.blogContent }}</article>
+    <p>Author : {{ blog.author }}</p>
+    <ul>
+      <li v-for="(category, index) in blog.categories" :key="index">
+        {{ category }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -18,7 +24,7 @@ export default {
   },
   created: function() {
     axios
-      .get(`https://jsonplaceholder.typicode.com/posts/${this.id}`)
+      .get(`https://learningvue-cbe9e.firebaseio.com/posts/${this.id}.json`)
       .then(({ data }) => {
         this.blog = data;
       })

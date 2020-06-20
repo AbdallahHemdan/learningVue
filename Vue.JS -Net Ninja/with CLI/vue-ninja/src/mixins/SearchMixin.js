@@ -1,8 +1,8 @@
 export default {
   computed: {
     filteredBlogs: function() {
-      return this.blogs.filter(({ title }) => {
-        return title.match(this.search);
+      return this.blogs.filter(({ blogTitle }) => {
+        return blogTitle.match(this.search);
       });
     },
   },
