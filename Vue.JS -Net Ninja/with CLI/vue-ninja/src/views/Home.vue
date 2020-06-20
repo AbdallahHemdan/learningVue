@@ -36,8 +36,4 @@ export default {
   color: #f00;
   border: 2px solid #000;
 }
-
-.home-container a:hover {
-  text-decoration: underline;
-}
 </style>
