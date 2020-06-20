@@ -11,7 +11,7 @@
       v-for="(blog, index) in filteredBlogs"
       :key="index"
     >
-      <h1 v-rand-color>{{ blog.title | toUppercase }}</h1>
+      <h1 v-randColor>{{ blog.title | toUppercase }}</h1>
       <article>{{ blog.body | shorten("...etc") }}</article>
     </div>
   </div>
@@ -44,6 +44,33 @@ export default {
       .catch(err => {
         console.log(err);
       });
+  },
+  filters: {
+    toUppercase: function(value) {
+      return value.toUpperCase();
+    },
+    shorten: function(value, suffix) {
+      return `${value.slice(0, 100)} ${suffix}`;
+    }
+  },
+  directives: {
+    randColor: function(element, binding, vnode) {
+      element.style.color = `#${Math.random()
+        .toString()
+        .slice(2, 8)}`;
+    },
+    theme: function(element, binding, vnode) {
+      if (binding.value === "wide") {
+        element.style.maxWidth = `1500px`;
+      } else if (binding.value === "narrow") {
+        element.style.maxWidth = `560px`;
+      }
+
+      if (binding.arg === "column") {
+        element.style.backgroundColor = `#ddd`;
+        element.style.padding = `20px`;
+      }
+    }
   }
 };
 </script>
