@@ -15,4 +15,12 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   modules: {},
+  getters: {
+    saleProducts: (state) => {
+      let saleProducts = state.products.map((product) => {
+        return { ...product, price: product.price / 2 };
+      });
+      return saleProducts;
+    },
+  },
 });
