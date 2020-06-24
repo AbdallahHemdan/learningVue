@@ -13,13 +13,19 @@ export default new Vuex.Store({
     ],
   },
   mutations: {
-    reducePrice: (state) => {
+    reducePrice: (state, payload) => {
       state.products.forEach((product) => {
-        product.price--;
+        product.price -= payload;
       });
     },
   },
-  actions: {},
+  actions: {
+    reducePrice : (context, payload) => {
+      setTimeout(() => {
+        context.commit('reducePrice', payload)
+      }, 2000);
+    }
+  },
   modules: {},
   getters: {
     saleProducts: (state) => {
