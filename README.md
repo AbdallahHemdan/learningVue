@@ -26,48 +26,8 @@
 > List of courses and topics I learned in Vue.js
 
 - [x] Introductory course
-  <details>
-
-  - [x] Intro And What Is Vue.js ?
-  - [x] Setup Environment and Prepare Tools
-  - [x] What Is Single Page Application?
-  - [x] Create The Vue Instance
-  - [x] Data Types Testing Examples
-  - [x] Methods Examples
-  - [x] Directives - v-text | v-html
-  - [x] Directives - v-for
-  - [x] Directives - v-if | v-else-if | v-else
-  - [x] Directives - v-show | v-once
-  - [x] Directives - v-bind | v-on
-  - [x] Directives - v-model
-  - [x] Create Basic Components
-  - [x] Passing Data To Components
-  - [x] Global Vs Local Components
-  - [x] Computed Properties Part 1
-  - [x] Computed Properties Part 2
-  - [x] Computed Properties Part 3 Validation Practice
-  - [x] Watch Part 1 Currency Converter
-  - [x] Watch Part 2 Convert Time Units
-  - [x] Setup and Configure Vue CLI Part 1
-  - [x] Setup and Configure Vue CLI Part 2
-  - [x] CLI Commands And Package.json
-  - [x] Structure Explain and Using Vue UI
-  - [x] Everything About Single File Components
-  - [x] Create Header & Learn About Routes Part 1
-  - [x] Create Header & Learn About Routes Part 2
-  - [x] Create Header & Learn About Routes Part 3
-  - [x] Add New Package And Component Data
-  - [x] Adding Bootstrap And Dependencies
-  - [x] Creating The Blog Component and Structure
-  - [x] Create Post Structure And Design
-  - [x] Create Json Object And Talk About APIs
-  - [x] Loop Through Posts And Show Data
-  - [x] Filters With Examples Part 1
-  - [x] Filters With Examples Part 2
-  - [x] Create Custom Directives Part One
-  - [x] Create Custom Directives Part Two
-  
-  </details>
+- [x] Vue.JS Net-Ninja
+- [x] Vuex Tutorial Net-Ninja
 
 ### Project
 > List of side projects I am willing to do using Vue.js.
