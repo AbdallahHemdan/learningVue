@@ -32,5 +32,8 @@
 ### Project
 > List of side projects I am willing to do using Vue.js.
 
+- [x] [Qurany](https://github.com/AbdallahHemdan/Qurany)
+- [x] [TODO](https://github.com/AbdallahHemdan/do-me)
+
 ## Licence
 > This software is licensed under MIT License, See [License](https://github.com/AbdallahHemdan/learningVue/blob/master/LICENSE) for more information ©AbdallahHemdan.
