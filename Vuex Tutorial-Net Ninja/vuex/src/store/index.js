@@ -12,7 +12,13 @@ export default new Vuex.Store({
       { name: "Red Shells", price: 80 },
     ],
   },
-  mutations: {},
+  mutations: {
+    reducePrice: (state) => {
+      state.products.forEach((product) => {
+        product.price--;
+      });
+    },
+  },
   actions: {},
   modules: {},
   getters: {
