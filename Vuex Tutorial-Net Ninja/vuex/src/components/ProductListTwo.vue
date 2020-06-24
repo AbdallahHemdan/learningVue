@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     reducePrices: function() {
-      this.$store.commit("reducePrice");
+      this.$store.dispatch("reducePrice", 4);
     }
   },
   computed: {
