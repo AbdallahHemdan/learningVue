@@ -8,18 +8,15 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "Counter",
   data: function() {
     return {};
   },
   methods: {
-    increment() {
-      this.$store.dispatch("increment");
-    },
-    decrement() {
-      this.$store.dispatch("decrement");
-    }
+    ...mapActions(["increment", "decrement"])
   },
   computed: {
     counter() {

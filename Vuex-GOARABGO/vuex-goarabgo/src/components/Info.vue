@@ -4,7 +4,7 @@
     <counter-info></counter-info>
     <h3>Double of counter</h3>
     <h4>{{ doubleCounter }}</h4>
-    <h3>Counter with added value</h3>
+    <h3>Counter with added value of 6</h3>
     <h4>{{ addedCounter }}</h4>
   </div>
 </template>
