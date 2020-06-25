@@ -8,23 +8,23 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-
 export default {
   name: "Counter",
   data: function() {
     return {};
   },
   methods: {
-    increment: function() {
+    increment() {
       this.$store.dispatch("increment");
     },
-    decrement: function() {
+    decrement() {
       this.$store.dispatch("decrement");
     }
   },
   computed: {
-    ...mapGetters["counter"]
+    counter() {
+      return this.$store.getters.counter;
+    }
   },
   props: []
 };

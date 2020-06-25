@@ -15,7 +15,7 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "Info",
-  data: function() {
+  data() {
     return {};
   },
   props: [],
@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     ...mapGetters(["doubleCounter"]),
-    addedCounter: function() {
+    addedCounter() {
       return this.$store.getters.addedCounter(5, 1);
     }
   }

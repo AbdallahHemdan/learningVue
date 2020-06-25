@@ -7,7 +7,7 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "CounterInfo",
-  data: function() {
+  data() {
     return {};
   },
   methods: {},
