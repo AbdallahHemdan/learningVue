@@ -17,11 +17,17 @@ export default new Vuex.Store({
   },
   modules: {},
   actions: {
-    increment: context => {
-      context.commit("increment");
+    increment: ({ commit }) => {
+      commit("increment");
     },
-    decrement: context => {
-      context.commit("decrement");
+    decrement: ({ commit }) => {
+      commit("decrement");
+    },
+    incrementAfterSecond: ({ commit }) => {
+      setTimeout(() => {
+        commit("increment");
+        console.log("After one second");
+      }, 1000);
     }
   },
   getters: {

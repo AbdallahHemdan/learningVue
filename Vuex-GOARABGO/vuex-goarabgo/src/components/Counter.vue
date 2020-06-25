@@ -4,6 +4,7 @@
     <p>Counter : {{ counter }}</p>
     <button @click="increment">Increment</button>
     <button @click="decrement">Decrement</button>
+    <button @click="incrementAfterSecond">Increment after one second</button>
   </div>
 </template>
 
@@ -16,7 +17,7 @@ export default {
     return {};
   },
   methods: {
-    ...mapActions(["increment", "decrement"])
+    ...mapActions(["increment", "decrement", "incrementAfterSecond"])
   },
   computed: {
     counter() {
