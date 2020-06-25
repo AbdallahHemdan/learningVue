@@ -1,7 +1,7 @@
 <template>
   <div class="info-container">
     <h2>Info</h2>
-    <counter-info :counter="counter"></counter-info>
+    <counter-info></counter-info>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   data: function() {
     return {};
   },
-  props: ["counter"],
+  props: [],
   components: {
     "counter-info": CounterInfo
   }

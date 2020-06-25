@@ -15,14 +15,18 @@ export default {
   },
   methods: {
     increment: function() {
-      this.$emit("increment");
+      this.$store.dispatch("increment");
     },
     decrement: function() {
-      this.$emit("decrement");
+      this.$store.dispatch("decrement");
     }
   },
-  computed: {},
-  props: ["counter"]
+  computed: {
+    counter: function() {
+      return this.$store.state.counter;
+    }
+  },
+  props: []
 };
 </script>
 

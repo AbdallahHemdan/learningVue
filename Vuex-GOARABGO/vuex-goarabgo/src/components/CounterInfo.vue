@@ -9,8 +9,12 @@ export default {
     return {};
   },
   methods: {},
-  computed: {},
-  props: ["counter"]
+  computed: {
+    counter: function() {
+      return this.$store.state.counter;
+    }
+  },
+  props: []
 };
 </script>
 

@@ -1,11 +1,7 @@
 <template>
   <div id="app">
-    <app-counter
-      :counter="counter"
-      @increment="increment"
-      @decrement="decrement"
-    ></app-counter>
-    <app-info :counter="counter"></app-info>
+    <app-counter></app-counter>
+    <app-info></app-info>
   </div>
 </template>
 
@@ -16,18 +12,9 @@ import Info from "./components/Info";
 export default {
   name: "App",
   data: function() {
-    return {
-      counter: 0
-    };
+    return {};
   },
-  methods: {
-    increment: function() {
-      this.counter++;
-    },
-    decrement: function() {
-      this.counter--;
-    }
-  },
+  methods: {},
   computed: {},
   components: {
     "app-counter": Counter,
