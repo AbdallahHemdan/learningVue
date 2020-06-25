@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "CounterInfo",
   data: function() {
@@ -10,9 +12,7 @@ export default {
   },
   methods: {},
   computed: {
-    counter: function() {
-      return this.$store.state.counter;
-    }
+    ...mapGetters(["counter"])
   },
   props: []
 };

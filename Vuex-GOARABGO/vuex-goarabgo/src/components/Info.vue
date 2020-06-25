@@ -2,11 +2,16 @@
   <div class="info-container">
     <h2>Info</h2>
     <counter-info></counter-info>
+    <h3>Double of counter</h3>
+    <h4>{{ doubleCounter }}</h4>
+    <h3>Counter with added value</h3>
+    <h4>{{ addedCounter }}</h4>
   </div>
 </template>
 
 <script>
 import CounterInfo from "./CounterInfo";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Info",
@@ -16,6 +21,12 @@ export default {
   props: [],
   components: {
     "counter-info": CounterInfo
+  },
+  computed: {
+    ...mapGetters(["doubleCounter"]),
+    addedCounter: function() {
+      return this.$store.getters.addedCounter(5, 1);
+    }
   }
 };
 </script>
