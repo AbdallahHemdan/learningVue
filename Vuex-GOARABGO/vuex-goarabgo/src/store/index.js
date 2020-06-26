@@ -44,6 +44,9 @@ export default new Vuex.Store({
     },
     addedCounter: state => (payload1, payload2) => {
       return state.counter + payload1 + payload2;
+    },
+    getTotal: state => {
+      return state.counter;
     }
   }
 });

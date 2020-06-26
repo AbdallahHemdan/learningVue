@@ -1,6 +1,6 @@
 <template>
   <div class="like-container">
-    <h3>no of likes : {{ noOfLikes }}</h3>
+    <h3>no of likes : {{ getTotal }}</h3>
     <button @click="toggleLike" v-if="likeState">Unlike</button>
     <button @click="toggleLike" v-if="!likeState">Like</button>
   </div>
@@ -12,15 +12,18 @@ export default {
   date() {},
   computed: {
     noOfLikes() {
-      return this.$store.getters.getNoOfLikes;
+      return this.$store.getters["like/getNoOfLikes"];
     },
     likeState() {
-      return this.$store.getters.getLikeState;
+      return this.$store.getters["like/getLikeState"];
+    },
+    getTotal() {
+      return this.$store.getters["like/getTotal"];
     }
   },
   methods: {
     toggleLike() {
-      this.$store.dispatch("toggleLikeState");
+      this.$store.dispatch("like/toggleLikeState");
     }
   }
 };
