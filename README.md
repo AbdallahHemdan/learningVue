@@ -28,7 +28,7 @@
 - [x] Introductory course
 - [x] Vue.JS Net-Ninja
 - [x] Vuex Tutorial Net-Ninja
-- [ ] Vuex Tutorial GoArabGo
+- [x] Vuex Tutorial GoArabGo
 
 ### Project
 > List of side projects I am willing to do using Vue.js.
