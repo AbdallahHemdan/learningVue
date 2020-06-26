@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import likeModule from "./modules/LikeModule";
 
 Vue.use(Vuex);
 
@@ -15,7 +16,11 @@ export default new Vuex.Store({
       state.counter--;
     }
   },
-  modules: {},
+
+  modules: {
+    like: likeModule
+  },
+
   actions: {
     increment: ({ commit }) => {
       commit("increment");
