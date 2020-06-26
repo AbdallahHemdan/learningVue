@@ -30,8 +30,14 @@ const likeModule = {
   },
 
   getters: {
-    getNoOfLikes: state => state.noOfLikes,
-    getLikeState: state => state.isLiked
+    getNoOfLikes: (state, getters, rootState) => {
+      console.log(rootState);
+      return state.noOfLikes;
+    },
+    getLikeState: (state, getters, rootState) => {
+      console.log(rootState);
+      return state.isLiked;
+    }
   }
 };
 
